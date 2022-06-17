@@ -1,58 +1,43 @@
-const cadastro = document.getElementById('cadastro');
 
-function validarNome() {
-	var nome = formulario.nome.value
+function Cadastrar() {
+  var Nome = document.getElementById('name'); 
+  var Email = document.getElementById('email');
+  var Senha = document.getElementById('senha');
+  var Cidade = document.getElementById('cidade');
+  var Estado = document.getElementById('estado');
 
-    if (nome.match(/\w+\s+/) == null){
-		document.getElementById('nome').classList.add('erro');
+   if (Nome.value.match(/\w+\s+/) == null){
+		document.getElementById('name').classList.add('erro');
+    alert('Informe seu nome completo.')
     	return false;
-    } else {
-        document.getElementById('nome').classList.remove('erro');
-     	return true;
-    }   
-}
+  }
 
-function validarEmail() {
-	var email = formulario.email.value
-
-    if (email.match(/\S+@\S+\.\S+/) == null){
+  else if (Email.value.match(/\S+@\S+\.\S+/) == null){
 		document.getElementById('email').classList.add('erro');
+    alert('Informe um email válido.')
     	return false;
-    } else {
-		document.getElementById('email').classList.remove('erro');
-     	return true;
-    }   
-}
+  }
 
-function validarCidade() {
-	var nome = formulario.cidade.value
+  else if (Senha.value.match(/[0-9]/g) == null || (!senha.match(/[A-Z]/g) && !senha.match(/[a-z]/g)) || !senha.match(/[\W|_]/g)){
+		document.getElementById('senha').classList.add('erro');
+    alert('Informe uma senha válida.')
+    	return false;
+  }
 
-    if (nome.match(/[a-zA-Z]+\s*/) == null){
+  if (Cidade.value.match(/\w+\s+/) == null){
 		document.getElementById('cidade').classList.add('erro');
+    alert('Informe uma CIDADE.')
     	return false;
-    } else {
-        document.getElementById('cidade').classList.remove('erro');
-     	return true;
-    }   
-}
+        }
 
-function verificarEstado() {
-    let estado = document.getElementById("estado");
-    let selected = estado.options[estado.selectedIndex].text;
-    if (selected == '--'){
-		document.getElementById('estado').classList.add('erro');
+  else if (Estado.selectedIndex == 0){
+		document.getElementById('estado').classList.add('erro'); 
+    alert('Informe o estado')
     	return false;
-    } else {
-        document.getElementById('estado').classList.remove('erro');
-     	return true;
-    }
-}
 
-function validarDados() {
-  if (validarNome () && validarEmail() && validarCidade () && verificarEstado()){
-   window.location.href = "file:///C:/Users/Eu%20e%20o%20outro/Documents/cadastro-sorteio/katt-sorteio/sorteio.html";
   }
-  else {
-  window.alert("Preencha com seus dados.");
-  }
+
+  else{
+  window.location.href = "file:///C:/Users/Eu%20e%20o%20outro/Documents/cadastro-sorteio/katt-sorteio/sorteio.html";
+}
 }

@@ -5,13 +5,13 @@
 	<meta charset="utf-8">
 	<title>Formulário</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css" />
-	<script src="./app.js" defer></script>
+	<script src="./app.js"></script>
 </head>
 
 <body>
 
 		<div class="box">
-			<h1>Cadastro clien</h1>
+			<h1>Cadastro cliente</h1>
 
 			<label>
 				<span>Nome Completo</span>
@@ -24,14 +24,19 @@
 			</label>
 
 			<label>
+				<span>Senha</span>
+				<input type="text" class="input_text" name="senha" id="senha" />
+			</label>
+
+			<label>
 				<span>Cidade</span>
 				<input type="text" class="input_text" name="cidade" id="cidade" />
 			</label>
 
 			<label>
 				<span>Estado</span>
-				<select id="estado" name="estado" class="input_text">
-					<option value="" selected disabled>--</option>
+				<select name="estado" id="estado" class="input_text">
+					<option value="">Selecione um estado</option>
 					<option value="AC">Acre</option>
 					<option value="AL">Alagoas</option>
 					<option value="AP">Amapá</option>
@@ -64,7 +69,7 @@
 			</label>
 
 			<br>
-			<button onclick="validarDados()" href="file:///C:/Users/Eu%20e%20o%20outro/Documents/cadastro-sorteio/katt-sorteio/sorteio.html" >Enviar</button>
+			<button type="button" onclick="Cadastrar()" id="butao">Enviar</button>
 			<br>
 		</div>
 
